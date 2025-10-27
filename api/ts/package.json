@@ -1,0 +1,13 @@
+{
+  "name": "@envoy/api-typescript",
+  "version": "0.0.0",
+  "private": true,
+  "devDependencies": {
+    "ts-proto": "^1.150.0",
+    "typescript": "^5.0.0",
+    "prettier": "^2.0.0"
+  },
+  "scripts": {
+    "gen:proto": "protoc -I ../ --plugin=protoc-gen-ts_proto=node_modules/.bin/protoc-gen-ts_proto --ts_proto_out=./gen --ts_proto_opt=esModuleInterop=true,forceLong=string,useOptionals=messages $(find ../ -name '*.proto')"
+  }
+}
